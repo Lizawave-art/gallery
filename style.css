@@ -1,0 +1,453 @@
+css/* ОБЩИЕ НАСТРОЙКИ СТИЛЯ ЛОФТ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #15110f;
+    /* ФОН ИЗ ВАШЕГО ФАЙЛА bg.jpg */
+    background-image: linear-gradient(rgba(21, 17, 15, 0.88), rgba(21, 17, 15, 0.88)), url('images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e5dcd3;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Запрещает горизонтальную прокрутку, если экран узкий */
+}
+
+/* ИСПРАВЛЕННАЯ АДАПТИВНАЯ ШАПКА */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 11, 9, 0.96);
+    border-bottom: 2px solid #3d2f28;
+    display: flex;
+    justify-content: space-between; /* Распределяет Лого - Меню - Языки */
+    align-items: center;
+    padding: 20px 40px; /* Безопасные отступы от краев экрана */
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #d1a153;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-right: 80px; /* Увеличили отступ, чтобы кнопки языка не сливались с логотипом */
+}
+
+/* Автоматическое центрирование навигации */
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Идеально центрирует блок меню */
+}
+
+.nav a {
+    color: #a8998a;
+    text-decoration: none;
+    margin: 0 20px; /* Комфортные отступы между ссылками */
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    white-space: nowrap; /* Запрещает перенос слов на новую строку */
+}
+
+.nav a:hover {
+    color: #d1a153;
+}
+
+/* Языковой блок (Всегда виден справа) */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+
+.lang-btn {
+    color: #544439;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.lang-btn.active, .lang-btn:hover {
+    color: #d1a153;
+}
+
+.lang-divider {
+    margin: 0 5px;
+    color: #3d2f28;
+}
+
+/* Переключение отображения языковых блоков текста */
+body.lang-en .text-ru { display: none; }
+body.lang-en .text-en { display: block; }
+body.lang-ru .text-en { display: none; }
+body.lang-ru .text-ru { display: block; }
+
+/* ГЛАВНЫЙ ЭКРАН */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 80px 20px 0 20px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.establishment {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #d1a153;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #f5ebe0;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #a8998a;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.btn, .contact-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 1px solid #d1a153;
+    color: #d1a153;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    background: transparent;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #d1a153;
+    color: #1a1513;
+    box-shadow: 0 0 15px rgba(209, 161, 83, 0.4);
+}
+
+.vintage-divider {
+    height: 1px;
+    width: 150px;
+    background: #d1a153;
+    margin: 15px auto 30px auto;
+    position: relative;
+}
+
+.vintage-divider::after {
+    content: '◆';
+    position: absolute;
+    top: -7px;
+    left: calc(50% - 6px);
+    background: #15110f;
+    padding: 0 5px;
+    color: #d1a153;
+    font-size: 10px;
+}
+
+/* СЕТКА ГАЛЕРЕИ */
+.gallery-section {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.gallery-section h2, .about-section h2, .contacts-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #f5ebe0;
+}
+
+.gallery-filters {
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    color: #a8998a;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    color: #d1a153;
+    border-bottom: 1px solid #d1a153;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #241c18;
+    border: 1px solid #382c25;
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.4s, box-shadow 0.4s, opacity 0.4s, scale 0.4s;
+}
+
+/* Скрытие для фильтра */
+.card.hide {
+    opacity: 0;
+    transform: scale(0.7);
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.frame-shadow {
+    background: #0f0b09;
+    padding: 15px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+}
+
+.card-img {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #1a1513;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    filter: brightness(0.85);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(209, 161, 83, 0.15);
+    border-color: #544135;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}
+
+.card-info {
+    margin-top: 20px;
+}
+
+.card-info img-title {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #f5ebe0;
+    margin-bottom: 8px;
+}
+
+.meta {
+    font-size: 13px;
+    color: #a8998a;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 16px;
+    color: #d1a153;
+    font-weight: 600;
+}
+
+/* РАЗДЕЛ "О ХУДОЖНИКЕ" */
+.about-section {
+    padding: 100px 50px;
+    background: rgba(15, 11, 9, 0.9);
+    border-top: 1px solid #3d2f28;
+    border-bottom: 1px solid #3d2f28;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image-wrap {
+    flex: 0 0 350px;
+    height: 450px;
+    border: 3px solid #3d2f28;
+    padding: 15px;
+    background: #1d1613;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.author-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #c4b5a7;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.vintage-divider.left { margin: 15px 0 30px 0; }
+.vintage-divider.left::after { left: 20px; }
+
+/* РАЗДЕЛ КОНТАКТОВ */
+.contacts-section {
+    padding: 100px 50px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contacts-section p {
+    color: #a8998a;
+    margin: 20px 0 40px 0;
+    line-height: 1.6;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer {
+    background: #0f0b09;
+    padding: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #544439;
+    border-top: 1px solid #241c18;
+}
+
+/* МОДАЛЬНОЕ ОКНО НА 3/4 ЭКРАНА */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 8, 7, 0.96);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    width: 75vw; /* Ровно 75% ширины экрана */
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border: 10px solid #241c18;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+}
+
+.lightbox-caption {
+    margin-top: 15px;
+    text-align: center;
+    color: #e5dcd3;
+}
+
+.lightbox-caption h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #f5ebe0;
+    margin-bottom: 5px;
+}
+
+.lightbox-price {
+    color: #d1a153;
+    font-weight: 600;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #a8998a;
+    font-size: 60px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (Для смартфонов) */
+@media (max-width: 768px) {
+    .header { padding: 15px 20px; }
+    .nav { display: none; } /* Скрываем меню на телефонах */
+    .hero h1 { font-size: 32px; }
+    .about-container { flex-direction: column; text-align: center; }
+    .about-image-wrap { flex: 0 0 300px; width: 100%; height: 380px; }
+    .lightbox-content { width: 90vw; }
+    .contact-links { flex-direction: column; }
+}
