@@ -451,3 +451,9 @@ body.lang-ru .text-ru { display: block; }
     .lightbox-content { width: 90vw; }
     .contact-links { flex-direction: column; }
 }
+/* Точечная правка: возвращаем кнопки языка на экранах телефонов */
+@media (max-width: 480px) {
+    .logo {
+        margin-right: 15px !important;
+    }
+}
