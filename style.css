@@ -80,7 +80,7 @@ body {
     cursor: pointer;
     transition: 0.3s;
     font-weight: 600;
-    padding: 5px;
+    padding: 5px 2px;
 }
 
 .lang-btn.active, .lang-btn:hover {
