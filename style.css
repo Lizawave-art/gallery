@@ -441,21 +441,38 @@ body.lang-ru .text-ru { display: block; }
     user-select: none;
 }
 
-/* МОБИЛЬНАЯ АДАПТАЦИЯ (Для смартфонов) */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ ДЛЯ ВАШЕЙ НОВОЙ ШАПКИ */
 @media (max-width: 768px) {
-    .header { padding: 15px 20px; }
-    .nav { display: none; } /* Скрываем меню на телефонах */
-    .hero h1 { font-size: 32px; }
-    .about-container { flex-direction: column; text-align: center; }
-    .about-image-wrap { flex: 0 0 300px; width: 100%; height: 380px; }
-    .lightbox-content { width: 90vw; }
-    .contact-links { flex-direction: column; }
-}
-/* Безопасный сдвиг кнопок языка влево только на телефонах */
-@media (max-width: 480px) {
-    .header div:last-child, 
-    .header nav:last-child {
-        padding-right: 20px !important; /* Отталкиваем кнопки от правого края экрана внутрь на 20 пикселей */
-        gap: 8px !important;            /* Слегка прижимаем EN и RU друг к другу, чтобы они не разлетались */
+    .header {
+        padding: 15px 15px; /* Уменьшаем отступы самой шапки от краев экрана, освобождая место */
+        justify-content: flex-start; /* Принудительно выстраиваем всё по левому краю в один ряд */
+    }
+    
+    .logo {
+        margin-right: 15px; /* Сжимаем зазор между логотипом и языками с 80px/40px до аккуратных 15px */
+        font-size: 16px; /* Чуть уменьшаем шрифт логотипа, чтобы он не занимал лишний экран */
+    }
+
+    .lang-switch {
+        margin-right: 0; /* Убираем любые лишние автоматические отступы */
+    }
+
+    .lang-btn {
+        padding: 5px 2px; /* Максимально сжимаем расстояние между кнопками EN, RU и палочкой | */
+    }
+
+    .nav {
+        display: none; /* Полностью скрываем ссылки меню, чтобы они не выталкивали языки наружу */
+    }
+    
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .about-image-wrap {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
     }
 }
