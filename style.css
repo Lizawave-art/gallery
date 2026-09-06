@@ -441,9 +441,9 @@ body.lang-ru .text-ru { display: block; }
     user-select: none;
 }
 
-/* Финальная ювелирная правка мобильной шапки */
+/* Универсальная точечная коррекция шапки для телефонов */
 @media (max-width: 768px) {
-    /* Скрываем лишние мелкие пункты меню на телефонах */
+    /* Скрываем лишние мелкие пункты меню, если они есть */
     .nav { 
         display: none !important; 
     } 
@@ -454,17 +454,13 @@ body.lang-ru .text-ru { display: block; }
         font-size: 20px !important;
     }
 
-    /* Перестраиваем языки в компактный вертикальный столбик */
-    .lang-switcher {
+    /* Находим ЛЮБОЙ блок навигации или языков в шапке и сдвигаем его влево от края экрана */
+    .header div:last-child, 
+    .header nav:last-child,
+    .header .lang-switcher {
         display: flex !important;
-        flex-direction: column !important; /* Выстраиваем EN и RU друг под другом */
-        gap: 2px !important; /* Минимальный аккуратный зазор между ними */
-        margin-right: 20px !important; /* Безопасно отодвигаем весь столбик влево от края экрана */
-        align-items: center !important;
-    }
-    
-    .lang-switcher a {
-        font-size: 11px !important; /* Делаем буквы чуть компактнее для аккуратности */
-        line-height: 1.1 !important;
+        flex-direction: row !important; /* Возвращаем привычную вам горизонтальную строчку */
+        gap: 8px !important; /* Уменьшаем расстояние между EN и RU, чтобы они не разлетались */
+        padding-right: 25px !important; /* Принудительно отодвигаем весь блок влево от края экрана на 25 пикселей! */
     }
 }
