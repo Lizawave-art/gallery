@@ -451,3 +451,11 @@ body.lang-ru .text-ru { display: block; }
     .lightbox-content { width: 90vw; }
     .contact-links { flex-direction: column; }
 }
+/* Безопасный сдвиг кнопок языка влево только на телефонах */
+@media (max-width: 480px) {
+    .header div:last-child, 
+    .header nav:last-child {
+        padding-right: 20px !important; /* Отталкиваем кнопки от правого края экрана внутрь на 20 пикселей */
+        gap: 8px !important;            /* Слегка прижимаем EN и RU друг к другу, чтобы они не разлетались */
+    }
+}
