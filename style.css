@@ -441,28 +441,24 @@ body.lang-ru .text-ru { display: block; }
     user-select: none;
 }
 
-/* МОБИЛЬНАЯ АДАПТАЦИЯ (Для смартфонов) */
+/* Профессиональное решение для мобильных экранов */
 @media (max-width: 768px) {
-    .header { padding: 15px 20px; }
-    .nav { display: none; } /* Скрываем меню на телефонах */
-    .hero h1 { font-size: 32px; }
-    .about-container { flex-direction: column; text-align: center; }
-    .about-image-wrap { flex: 0 0 300px; width: 100%; height: 380px; }
-    .lightbox-content { width: 90vw; }
-    .contact-links { flex-direction: column; }
-}
-/* Точечная правка: возвращаем кнопки языка на экранах телефонов */
-@media (max-width: 480px) {
+    .header {
+        padding: 15px 15px !important; /* Уменьшаем внутренние поля шапки, освобождая место */
+    }
+    
     .logo {
-        margin-right: 15px !important;
+        margin-right: 0 !important; /* На смартфонах убираем фиксированный правый отступ полностью! */
+        font-size: 18px !important;  /* Слегка уменьшаем размер логотипа для компактности */
     }
-}
-/* Ювелирная правка: сжатие элементов навигации и языков для телефонов */
-@media (max-width: 480px) {
+
     .nav {
-        gap: 8px !important; /* Уменьшаем зазоры между кнопками, чтобы они вошли в экран */
+        gap: 10px !important; /* Делаем оптимальное расстояние между ссылками меню и языками */
+        margin-left: auto !important; /* Автоматически и мягко выравниваем меню вправо */
+        padding-right: 5px !important; /* Делаем микро-отступ от самого правого края экрана */
     }
+
     .nav a {
-        font-size: 11px !important; /* Чуть-чуть уменьшаем сами буквы меню и языков на мобильных */
+        font-size: 11px !important; /* Оптимальный размер шрифта для экранов телефонов */
     }
 }
