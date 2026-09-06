@@ -457,3 +457,12 @@ body.lang-ru .text-ru { display: block; }
         margin-right: 15px !important;
     }
 }
+/* Ювелирная правка: сжатие элементов навигации и языков для телефонов */
+@media (max-width: 480px) {
+    .nav {
+        gap: 8px !important; /* Уменьшаем зазоры между кнопками, чтобы они вошли в экран */
+    }
+    .nav a {
+        font-size: 11px !important; /* Чуть-чуть уменьшаем сами буквы меню и языков на мобильных */
+    }
+}
