@@ -40,7 +40,7 @@ body {
     color: #d1a153;
     font-weight: 600;
     flex-shrink: 0;
-    margin-right: 80px; /* Увеличили отступ, чтобы кнопки языка не сливались с логотипом */
+    margin-right: 70px; /* Увеличили отступ, чтобы кнопки языка не сливались с логотипом */
 }
 
 /* Автоматическое центрирование навигации */
@@ -441,26 +441,13 @@ body.lang-ru .text-ru { display: block; }
     user-select: none;
 }
 
-/* Универсальная точечная коррекция шапки для телефонов */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (Для смартфонов) */
 @media (max-width: 768px) {
-    /* Скрываем лишние мелкие пункты меню, если они есть */
-    .nav { 
-        display: none !important; 
-    } 
-
-    /* Оставляем ваш красивый отступ у логотипа */
-    .logo {
-        margin-right: 80px !important;
-        font-size: 20px !important;
-    }
-
-    /* Находим ЛЮБОЙ блок навигации или языков в шапке и сдвигаем его влево от края экрана */
-    .header div:last-child, 
-    .header nav:last-child,
-    .header .lang-switcher {
-        display: flex !important;
-        flex-direction: row !important; /* Возвращаем привычную вам горизонтальную строчку */
-        gap: 8px !important; /* Уменьшаем расстояние между EN и RU, чтобы они не разлетались */
-        padding-right: 25px !important; /* Принудительно отодвигаем весь блок влево от края экрана на 25 пикселей! */
-    }
+    .header { padding: 15px 20px; }
+    .nav { display: none; } /* Скрываем меню на телефонах */
+    .hero h1 { font-size: 32px; }
+    .about-container { flex-direction: column; text-align: center; }
+    .about-image-wrap { flex: 0 0 300px; width: 100%; height: 380px; }
+    .lightbox-content { width: 90vw; }
+    .contact-links { flex-direction: column; }
 }
