@@ -319,12 +319,10 @@ html<!DOCTYPE html>
 
                 card.innerHTML = `
                     <div class="frame-shadow">
-                        <!-- БОНУС ДЛЯ SEO: Теперь alt автоматически берет название картины на нужном языке -->
-                        <div class="card-img"><img src="${item.img}" alt="${title}"></div>
+                        <div class="card-img"><img src="${item.img}" alt="Artwork"></div>
                     </div>
                     <div class="card-info">
-                        <!-- ИСПРАВЛЕНО: Заменен некорректный тег на стандартный div с правильным классом -->
-                        <div class="img-title">${title}</div>
+                        <img-title>${title}</img-title>
                         <p class="meta">${meta}</p>
                         <p class="price">${item.price}</p>
                     </div>
